@@ -1,0 +1,886 @@
+*{
+    box-sizing: border-box;
+}
+
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* start nav */
+.navbar{
+    z-index: 1;
+}
+.collapse{
+    justify-content: end;
+    align-items: center;
+}
+
+.Home{
+    width: 100%;
+    height: calc(100vh + 200px);;
+    background-image: url("/images/welcome-hero/welcome-banner.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.Home::after{
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    background: rgba(42, 45, 84, .60);
+    height: calc(100vh + 200px);
+}
+
+.logo{
+    text-transform: uppercase;
+    font-size: 24px !important;
+    color: white;
+    font-family: 'Rufina', serif;
+    font-weight: 700;
+    text-decoration: none;
+}
+.logo:hover{
+    color: white;
+}
+
+.nav-item .nav-link {
+margin-left: 20px;
+color: white;
+text-decoration: none;
+font-size: 14px;
+font-weight:500 ;
+transition: 0.3s;
+}
+.nav-item.active .nav-link {
+    color: #4E4FFA;
+}
+
+.nav-item .nav-link:hover{
+    color: #4E4FFA;
+}
+.fa-bars{
+    color: white;
+}
+.home-contant{
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    color: white;
+}
+
+.home-text h2{
+    text-transform: uppercase;
+    font-size:30px ;
+    margin-bottom: 45px;
+    font-weight: 700;
+}
+.home-text p{
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+.home-text button{
+    padding: 15px 50px;
+}
+/* ========== 📱 Media Queries ========== */
+
+
+@media (max-width: 992px) {
+    .logo {
+        font-size: 20px !important;
+    }
+
+    .nav-item .nav-link {
+        margin-left: 10px;
+        font-size: 13px;
+    }
+
+    .home-text h2 {
+        font-size: 26px;
+        margin-bottom: 35px;
+    }
+
+    .home-text p {
+        font-size: 14px;
+    }
+
+    .home-text button {
+        padding: 12px 40px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .collapse {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .logo {
+        font-size: 18px !important;
+        text-align: center;
+    }
+
+    .nav-item .nav-link {
+        margin-left: 0;
+        margin-top: 10px;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .home-text h2 {
+        font-size: 22px;
+        margin-bottom: 30px;
+    }
+
+    .home-text p {
+        font-size: 13px;
+        margin-bottom: 30px;
+    }
+
+    .home-text button {
+        padding: 10px 30px;
+        font-size: 14px;
+    }
+
+    .home-contant {
+        padding: 0 20px;
+        width: 100%;
+    }
+}
+
+
+.car-filter {
+    background-color: #fff;
+    padding: 40px;
+    position: absolute;
+    top: 130%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1)
+}
+
+.filter-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-end;
+    justify-content: space-around;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    min-width: 150px;
+}
+
+.filter-group label {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: 500;
+}
+
+.filter-group select {
+    padding: 10px;
+    border: none;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #777;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    margin-bottom: 10px;
+}
+
+.search-btn {
+    margin: auto;
+}
+
+.search-btn button {
+    padding: 12px 24px;
+    background-color: #4f46e5;
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-btn button:hover {
+    background-color: #4338ca;
+}
+
+@media (max-width: 768px) {
+    .filter-form {
+    flex-direction: column;
+    align-items: stretch;
+    }
+
+    .search-btn {
+    margin-left: 0;
+    }
+}
+@media (max-width: 600px) {
+    .car-filter {
+        padding: 70px;
+        top: 120%;
+    }
+
+
+    .filter-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-group {
+        min-width: 100%;
+    }
+
+    .search-btn {
+        margin-top: 20px;
+    }
+
+    .filter-group select{
+        width: 200px;
+    }
+    .filter-group label{
+        font-size: 16px;
+    }
+}
+
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .car-filter {
+        padding: 30px;
+        top: 125%;
+
+    }
+
+    .filter-group {
+        flex: 1 1 45%;
+    }
+
+    .filter-form {
+        justify-content: space-between;
+    }
+}
+
+
+@media (min-width: 1025px) {
+    .car-filter {
+        top: 130%;
+    }
+
+    .filter-group {
+        flex: 1 1 30%;
+    }
+}
+
+
+.services{
+    padding:230px  0;
+}
+.card{
+    max-width: 315px;
+    transition:0.5s ease;
+}
+.card:hover{
+    transform:translateY(-20px);
+    transition:all 0.5s ease;
+}
+.card-body h5{
+    font-size: 1rem;
+    color: #333;
+}
+.card-body p{
+    color: #818998;
+    font-size: 15px;
+    line-height: 1.8;
+    padding-bottom: 35px;
+    text-transform: initial
+}
+.fa-car{
+    font-size: 2.5rem;
+    padding: 30px;
+}
+
+.dash{
+    position: absolute;
+    left: 50%;
+    background-color: #4338ca;
+    width: 30px;
+    height: 2px;
+}
+.card-services:hover .card-body h5,
+.card-services:hover .card-body p,
+.card-services:hover .fa-car {
+    transition: all 0.5s ease;
+}
+
+
+.card-services:hover .dash {
+    transition: 0.3s;
+}
+
+@media (max-width: 600px) {
+    .services {
+        padding-top: 450px;
+        padding-left: 25px;
+        padding-right: 25px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        max-width: 100%;
+        padding-top: 10px;
+    }
+
+    .col-card{
+        padding-top: 15px;
+    }
+
+    .card-body p {
+        font-size: 14px;
+        padding-bottom: 25px;
+    }
+
+    .fa-car {
+        font-size: 2rem;
+        padding: 20px;
+    }
+    .dash{
+        position: absolute;
+        left: 45%;
+    }
+}
+
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .services {
+        padding: 150px 40px;
+        justify-content: space-around;
+    }
+
+    .card {
+        flex: 1 1 45%;
+    }
+}
+
+
+@media (min-width: 1025px) {
+    .services {
+        padding: 230px 60px;
+    }
+
+    .card {
+        flex: 1 1 30%;
+    }
+}
+
+.Newcar{
+    background: #f8f9fb
+}
+
+.special-heading{
+    padding: 60px;
+}
+
+.dash2{
+    position: absolute;
+    left: 46%;
+    background-color: #4338ca;
+    width: 100px;
+    height: 2px;
+}
+
+
+
+.special-heading .info small{
+    font-size: 0.8rem !important;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+    font-weight: 500;
+} 
+.special-heading .info h4{
+    color: #444a57;
+    font-size: 2rem !important;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+} 
+
+.carousel{
+    position: relative;
+    left: 5%;
+}
+
+.slide {
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    align-items: center; 
+}
+
+
+.image-slide img {
+    max-width: 300px;
+    border-radius: 8px;
+}
+
+.slide-text {
+    max-width: 600px;
+    margin-left: 30px;
+}
+
+.slide-text h5 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+}
+
+.slide-text span {
+    color: #e63946;
+    font-weight: bold;
+}
+
+.slide-text p {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .slide {
+    flex-direction: column; 
+    text-align: center;
+    }
+
+    .slide-text {
+    margin-left: 0;
+    margin-top: 20px;
+    max-width: 100%;
+    }
+    .image-slide img {
+    max-width: 100%;
+    }
+}
+/* الجوال */
+@media (max-width: 600px) {
+    .special-heading {
+        padding: 40px 20px;
+    }
+
+    .slide {
+        flex-direction: column;
+        text-align: center;
+        padding-right: 25px;
+    }
+
+    .slide-text {
+        margin-left: 0;
+    }
+
+    .slide-text h5 {
+        font-size: 20px;
+    }
+
+    .slide-text p {
+        font-size: 14px;
+    }
+
+    .image-slide img {
+        max-width: 100%;
+    }
+
+    .dash2 {
+        width: 80px;
+        left: 43%;
+    }
+}
+
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .special-heading {
+        padding: 50px;
+    }
+
+    .slide {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .slide-text {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .dash2 {
+        width: 90px;
+    }
+}
+
+
+@media (min-width: 1025px) {
+    .slide {
+        flex-direction: row;
+    }
+
+    .slide-text {
+        margin-left: 30px;
+        text-align: left;
+    }
+
+    .dash2 {
+        width: 100px;
+    }
+}
+
+.featured{
+    background-color: white;
+}
+.card-featured{
+    max-width: 250px ;
+}
+.card-featured img{
+    padding: 40px;
+    object-fit: cover;
+}
+
+.card-footer p{
+    color: #818998;
+    line-height: 1.8;
+    text-transform: capitalize;
+}
+
+.card-info{
+    max-width: 250px;
+}
+.card-info h6{
+    color: #444a57;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 20px;
+    text-transform: capitalize;
+}
+.card-info small{
+    font-size: 14px !important;
+}
+.card-info p{
+    margin: 10px 0 ;
+    color: #818998;
+    font-size: 16px;
+    line-height: 1.8;
+    text-transform: initial
+}
+.card-info small{
+    font-weight: 600;
+}
+
+.card-img-top {
+    width: 80% !important;
+    position: relative;
+    left: 8%;
+    padding: 15px 85px;
+    margin-top: 15px;
+}
+
+.card-body h2{
+    color: #444a57;
+    font-size: 1rem;
+    text-transform: capitalize;
+}
+.card-body h4{
+    color: #444a57;
+    font-size: 0.8rem;
+    text-transform: capitalize;
+}
+.review-card{
+    border: solid 2px #818998;
+    gap: 20px;
+}
+@media (max-width: 600px) {
+    .featured {
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 15px;
+    }
+
+    .card-featured {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .card-info p,
+    .card-footer p {
+        font-size: 14px;
+    }
+
+    .card-img-top {
+        padding: 10px 70px;
+        left: 0;
+        width: 100% !important;
+    }
+
+    .card-body h2,
+    .card-body h4 {
+        text-align: center;
+    }
+
+    .image-client{
+        padding: 40px;
+    }
+
+}
+
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .featured {
+        justify-content: space-around;
+        padding: 50px 30px;
+    }
+
+    .card-featured {
+        flex: 1 1 45%;
+        max-width: 45%;
+    }
+}
+
+
+@media (min-width: 1025px) {
+    .featured {
+        justify-content: center;
+        padding: 60px 60px;
+    }
+
+    .card-featured {
+        flex: 1 1 22%;
+        max-width: 250px;
+    }
+}
+.brands {
+    padding: 150px 0;
+    background-color: white;
+}
+
+.brand-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 20px 40px;
+}
+
+/* ضمان تناسق الشعارات داخل .brand-item */
+.brand-item {
+    flex: 1 1 120px;
+    text-align: center;
+}
+
+.brand-item img {
+    max-width: 100%;
+    height: auto;
+    opacity: 0.8;
+    transition: 0.3s ease;
+}
+
+.brand-item img:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* 🌐 Media Queries */
+
+/* الجوال */
+@media (max-width: 600px) {
+    .brands {
+        padding: 80px 20px;
+    }
+
+    .brand-area {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .brand-item {
+        width: 100%;
+    }
+
+    .brand-item img {
+        max-width: 150px;
+        padding-top: 20px;
+    }
+}
+
+/* التابلت */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .brand-area {
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .brand-item {
+        flex: 1 1 30%;
+    }
+
+    .brand-item img {
+        max-width: 120px;
+        padding-top: 20px;
+    }
+}
+
+/* الشاشات الكبيرة */
+@media (min-width: 1025px) {
+    .brand-area {
+        justify-content: space-between;
+        gap: 40px;
+    }
+
+    .brand-item {
+        flex: 1 1 10%;
+    }
+
+    .brand-item img {
+        max-width: 100px;
+    }
+}
+
+
+.contact{
+    background: #2a2d54;
+    padding-top:60px ;
+    color: white;
+}
+
+.contact h4{
+    text-transform: uppercase;
+    font-family: 'Rufina', serif;
+    font-size: 16px;
+
+}
+.contact p{
+    font-size: 14px;
+    color: #eeeff6b0;
+    font-weight: 600;
+}
+
+.links ul li {
+    text-transform: capitalize;
+    text-decoration: none;
+    list-style: none;
+}
+
+.links ul li a{
+    color: rgba(255, 255, 255, 0.404);
+    text-decoration: none;
+}
+
+.footer{
+    padding-top: 200px;
+}
+
+.icon-end{
+    margin-left: 10px;
+}
+
+.email{
+    color: #2a2d54;
+    background: #2a2d54;
+    border: 2px solid rgba(128, 128, 128, 0.137);
+}
+
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+}
+
+/* 🌐 Media Queries */
+
+/* الجوال */
+@media (max-width: 600px) {
+    .contact {
+        padding-top: 40px;
+        padding-left: 25px;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer {
+        padding-top: 100px;
+    }
+
+    .links ul li {
+        font-size: 14px;
+    }
+
+    .contact h4 {
+        font-size: 14px;
+    }
+
+    .contact p {
+        font-size: 10px;
+    }
+}
+
+/* التابلت */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .contact-container {
+        justify-content: space-around;
+    }
+
+    .footer {
+        padding-top: 150px;
+    }
+}
+
+/* الشاشات الكبيرة */
+@media (min-width: 1025px) {
+    .contact-container {
+        justify-content: space-between;
+    }
+
+    .footer {
+        padding-top: 200px;
+    }
+}
+
+#myBtn{
+    display: none; 
+    position: fixed; 
+    bottom: 20px; 
+    right: 30px; 
+    z-index: 99; 
+    border: none; 
+    outline: none; 
+    background-color:#4E4FFA; 
+    color: white;
+    cursor: pointer;
+    padding: 15px; 
+    border-radius: 10px; 
+    font-size: 18px;
+    transition: 1s ease-in-out all;
+}
+
+
